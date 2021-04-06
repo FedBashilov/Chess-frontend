@@ -1,0 +1,27 @@
+.wrapper-auth-form {
+  background: #aaaaaa;
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 250px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px; }
+  .wrapper-auth-form .auth-form {
+    text-align: center; }
+    .wrapper-auth-form .auth-form .form-element {
+      min-height: 80px; }
+    .wrapper-auth-form .auth-form .error {
+      color: red;
+      font-size: 0.8em; }
+    .wrapper-auth-form .auth-form .response_error {
+      color: red;
+      font-size: 1.1em;
+      margin-bottom: 10px; }
+
+/*# sourceMappingURL=authorization.component.css.map */

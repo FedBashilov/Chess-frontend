@@ -1,0 +1,65 @@
+ <div class="wrapper-login-form wrapper-auth-form" *ngIf="isRegistered; else registration">
+    <form class="login-form auth-form"  [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+      <div class="form-title">
+        Вход
+      </div>
+      <div class="form-element">
+        <mat-form-field>
+          <input matInput type="text" formControlName="nickname" placeholder = "Никнейм">
+        </mat-form-field>
+        <div class="error" *ngIf="isControlInvalid('nickname', this.loginForm)">
+          Введите корректный никнейм
+        </div>
+      </div>
+      <div class="form-element">
+        <mat-form-field>
+          <input matInput type="password" formControlName="password" placeholder = "Пароль">
+        </mat-form-field>
+        <div class="error" *ngIf="isControlInvalid('password', this.loginForm)">
+          Пароль должен содержать не меньше 8 символов
+        </div>
+      </div>
+      <div class="response-error">
+        {{loginErrorMessage}}
+      </div>
+      <button class="common-button lemon" type="submit">Войти</button>
+    </form>
+    <div class="go-to-registration">
+      Еще нет аккаунта?
+      <span class="form-link" (click)="isRegistered = !isRegistered">Регистрация</span>
+    </div>
+ </div>
+
+  <ng-template #registration>
+    <div class="wrapper-auth-form">
+      <form class="registration-form auth-form" [formGroup]="registrationForm" (ngSubmit)="onSubmitRegistration()">
+        <div class="form-title">
+          Регистрация
+        </div>
+        <div class="form-element">
+          <mat-form-field>
+            <input matInput type="text" formControlName="nickname" placeholder = "Никнейм">
+          </mat-form-field>
+          <div class="error" *ngIf="isControlInvalid('nickname', this.registrationForm)">
+            Никнейм должен содержать минимум 2 символа
+          </div>
+        </div>
+        <div class="form-element">
+          <mat-form-field>
+            <input matInput type="password" formControlName="password" placeholder = "Пароль">
+          </mat-form-field>
+          <div class="error" *ngIf="isControlInvalid('password', this.registrationForm)">
+            Пароль должен содержать не меньше 8 символов
+          </div>
+        </div>
+        <div class="response-error">
+          {{registrationErrorMessage}}
+        </div>
+        <button class="common-button lemon" type="submit">Зарегистрироваться</button>
+      </form>
+      <div class="go-to-login">
+        Уже есть аккаунт?
+        <span class="form-link"  (click)="isRegistered = !isRegistered">Войти</span>
+      </div>
+    </div>
+  </ng-template>
