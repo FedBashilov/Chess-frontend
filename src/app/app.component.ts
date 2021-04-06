@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { MessageService } from './services/message.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,12 +9,5 @@ import { MessageService } from './services/message.service';
 })
 export class AppComponent {
   title = 'chess-frontend';
-  input;
-  constructor(public messageService: MessageService) {}
-  sendMessage() {
-    if (this.input) {
-      this.messageService.sendMessage(this.input);
-      this.input = '';
-    }
-  }
+
 }
